@@ -1,16 +1,15 @@
-name: CI Pipeline
+name: CI/CD Pipeline
 
 on:
   push:
-    branches: ["*"]      
+    branches: ["*"]
   pull_request:
-    branches: ["*"]      
-  workflow_dispatch:       
+    branches: ["*"]
+  workflow_dispatch:
 
 jobs:
-  build-and-test:
+  tests:
     runs-on: ubuntu-latest
-    
     steps:
     - name: Checkout code
       uses: actions/checkout@v3
@@ -23,21 +22,22 @@ jobs:
     - name: Install dependencies
       run: |
         python -m pip install --upgrade pip
-        # Если файла нет, команда не упадет. Если есть - установит.
-        if [ -f hw2/src/requirements.txt ]; then pip install -r hw2/src/requirements.txt; fi
         pip install flake8 pytest
+        if [ -f hw2/src/requirements.txt ]; then pip install -r hw2/src/requirements.txt; fi
 
     - name: Run Linter (Flake8)
       run: |
-        # Показываем ошибки, но не валим сборку (exit-zero)
         flake8 . --count --select=E9,F63,F7,F82 --show-source --statistics
         flake8 . --count --exit-zero --max-complexity=10 --max-line-length=127 --statistics
 
     - name: Run Tests
+      env:
+        PYTHONPATH: ${{ github.workspace }}/hw2/src
       run: pytest
-      
+
+  # --- ЧАСТЬ 2: СБОРКА БИБЛИОТЕКИ ---
   build-library:
-    needs: tests  # Запускать ТОЛЬКО после успешных тестов
+    needs: tests
     runs-on: ubuntu-latest
     
     steps:
@@ -53,10 +53,10 @@ jobs:
         run: pip install build
 
       - name: Build Package
+        # Собираем пакет из папки hw2
         run: python -m build hw2/
 
       - name: Upload Artifact
-        # Сохраняем собранный файл
         uses: actions/upload-artifact@v4
         with:
           name: python-package
