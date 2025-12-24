@@ -35,3 +35,29 @@ jobs:
 
     - name: Run Tests
       run: pytest
+      
+  build-library:
+    needs: tests  # Запускать ТОЛЬКО после успешных тестов
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.9'
+
+      - name: Install Builder
+        run: pip install build
+
+      - name: Build Package
+        run: python -m build hw2/
+
+      - name: Upload Artifact
+        # Сохраняем собранный файл
+        uses: actions/upload-artifact@v4
+        with:
+          name: python-package
+          path: hw2/dist/*
