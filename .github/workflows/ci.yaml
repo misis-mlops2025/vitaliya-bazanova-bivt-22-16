@@ -24,7 +24,7 @@ jobs:
       run: |
         python -m pip install --upgrade pip
         # Если файла нет, команда не упадет. Если есть - установит.
-        if [ -f src/requirements.txt ]; then pip install -r hw2/src/requirements.txt; fi
+        if [ -f shw2/src/requirements.txt ]; then pip install -r hw2/src/requirements.txt; fi
         pip install flake8 pytest
 
     - name: Run Linter (Flake8)
