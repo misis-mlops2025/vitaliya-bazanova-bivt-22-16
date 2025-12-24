@@ -1,8 +1,10 @@
+def sum_numbers(*args):
+    return sum(args)
+
+
 def main():
-    a = int(input("¬ведите первое число: "))
-    b = int(input("¬ведите второе число: "))
-    c = int(input("¬ведите третье число: "))
-    print(a + b + c)
+    numbers = list(map(int, input("¬ведите числа через пробел: ").split()))
+    print(sum_numbers(*numbers))
 
 
 if __name__ == "__main__":
