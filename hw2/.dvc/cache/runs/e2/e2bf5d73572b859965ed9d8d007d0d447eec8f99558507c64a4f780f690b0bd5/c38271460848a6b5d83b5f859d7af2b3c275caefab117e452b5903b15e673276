@@ -1,0 +1,15 @@
+cmd: python src/data/make_dataset.py
+deps:
+- path: conf/config.yaml
+  hash: md5
+  md5: f97604a590cf6e82782bed80715051cb
+  size: 283
+- path: src/data/make_dataset.py
+  hash: md5
+  md5: f27e8b5b61f8948917fb7351c7e5792d
+  size: 914
+outs:
+- path: data/raw/dataset.csv
+  hash: md5
+  md5: 9ce631a66203cb8f0becbca9e49818ef
+  size: 388770

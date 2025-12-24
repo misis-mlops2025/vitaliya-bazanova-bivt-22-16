@@ -1,0 +1,23 @@
+cmd: python src/models/train_model.py
+deps:
+- path: conf/config.yaml
+  hash: md5
+  md5: 1f34ba238ecb29e59c9be668181a2ad0
+  size: 283
+- path: data/raw/dataset.csv
+  hash: md5
+  md5: b993a5e7bab57d458c850124e4f3fa2c
+  size: 388917
+- path: src/models/train_model.py
+  hash: md5
+  md5: 3ea6d4900f07c13cbf3c77f155428486
+  size: 3279
+outs:
+- path: models/model.pkl
+  hash: md5
+  md5: 4c6ee29cfd49aa7806a5723859b98bce
+  size: 1137
+- path: reports/metrics.json
+  hash: md5
+  md5: d8556de1ab9a67ba29638420936ab7e1
+  size: 17

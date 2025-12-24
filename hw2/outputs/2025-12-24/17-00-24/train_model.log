@@ -1,0 +1,5 @@
+[2025-12-24 17:00:24,228][__main__][INFO] - Starting training pipeline...
+[2025-12-24 17:00:24,230][__main__][INFO] - Data loaded. Train shape: (800, 20), Test shape: (200, 20)
+[2025-12-24 17:00:24,230][__main__][INFO] - Initialized model: logistic_regression
+[2025-12-24 17:00:24,232][__main__][INFO] - Model trained.
+[2025-12-24 17:00:24,233][__main__][INFO] - Validation Accuracy: 0.8100

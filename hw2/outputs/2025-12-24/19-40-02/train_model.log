@@ -1,0 +1,3 @@
+[2025-12-24 19:40:02,137][__main__][INFO] - Starting training...
+[2025-12-24 19:40:02,150][__main__][INFO] - Model trained: logistic_regression
+[2025-12-24 19:40:02,152][__main__][INFO] - Validation Accuracy: 0.9000
