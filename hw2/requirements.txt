@@ -6,3 +6,4 @@ omegaconf
 pylint
 pytest
 pytest-cov
+dvc
