@@ -1,0 +1,14 @@
+[build-system]
+requires = ["setuptools>=42", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "ml_project_hw"
+version = "0.0.1"
+description = "My ML project for HW"
+dependencies = [
+    "pandas",
+    "scikit-learn",
+    "hydra-core",
+    "omegaconf"
+]

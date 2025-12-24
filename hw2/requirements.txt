@@ -1,0 +1,9 @@
+scikit-learn
+pandas
+numpy
+hydra-core
+omegaconf
+pylint
+pytest
+pytest-cov
+dvc

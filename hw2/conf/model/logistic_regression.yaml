@@ -1,0 +1,4 @@
+name: logistic_regression
+params:
+  C: 1.0
+  solver: 'liblinear'
