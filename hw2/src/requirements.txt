@@ -2,3 +2,5 @@ pandas
 scikit-learn
 hydra-core
 omegaconf
+flake8
+pytest

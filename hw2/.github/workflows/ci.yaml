@@ -1,0 +1,36 @@
+name: CI Pipeline
+
+# Триггеры: запускаем на любой пуш и на Pull Request в ветку master/main
+on:
+  push:
+    branches: ["master", "main", "hw5"]
+  pull_request:
+    branches: ["master", "main"]
+
+jobs:
+  build-and-test:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v3
+
+    - name: Set up Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.9'
+
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        if [ -f src/requirements.txt ]; then pip install -r src/requirements.txt; fi
+        # На всякий случай ставим явно, если вдруг забыла добавить в файл
+        pip install flake8 pytest
+
+    - name: Run Linter (Flake8)
+      run: |
+        flake8 . --count --select=E9,F63,F7,F82 --show-source --statistics
+        flake8 . --count --exit-zero --max-complexity=10 --max-line-length=127 --statistics
+
+    - name: Run Tests
+      run: pytest
