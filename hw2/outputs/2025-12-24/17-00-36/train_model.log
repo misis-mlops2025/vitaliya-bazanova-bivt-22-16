@@ -1,0 +1,5 @@
+[2025-12-24 17:00:36,420][__main__][INFO] - Starting training pipeline...
+[2025-12-24 17:00:36,422][__main__][INFO] - Data loaded. Train shape: (800, 20), Test shape: (200, 20)
+[2025-12-24 17:00:36,422][__main__][INFO] - Initialized model: random_forest
+[2025-12-24 17:00:36,637][__main__][INFO] - Model trained.
+[2025-12-24 17:00:36,644][__main__][INFO] - Validation Accuracy: 0.8800
