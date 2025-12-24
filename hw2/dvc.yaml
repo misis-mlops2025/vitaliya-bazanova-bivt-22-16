@@ -1,0 +1,20 @@
+stages:
+  prepare_data:
+    cmd: python src/data/make_dataset.py
+    deps:
+      - src/data/make_dataset.py
+      - conf/config.yaml
+    outs:
+      - data/raw/dataset.csv
+
+  train_model:
+    cmd: python src/models/train_model.py
+    deps:
+      - src/models/train_model.py
+      - data/raw/dataset.csv
+      - conf/config.yaml
+    outs:
+      - models/model.pkl
+    metrics:
+      - reports/metrics.json:
+          cache: false

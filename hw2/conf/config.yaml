@@ -1,0 +1,14 @@
+defaults:
+  - model: logistic_regression
+  - _self_
+
+random_state: 42
+
+dataset:
+  n_samples: 1000
+  n_features: 20
+  n_informative: 15
+  test_size: 0.2
+  raw_data_path: "data/raw/dataset.csv"
+  output_model_path: "models/model.pkl"
+  metrics_path: "reports/metrics.json"
