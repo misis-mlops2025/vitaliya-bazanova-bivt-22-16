@@ -12,7 +12,7 @@ from sklearn.linear_model import LogisticRegression
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.tree import DecisionTreeClassifier
 from sklearn.metrics import accuracy_score
-
+from sklearn.datasets import make_classification
 # Настраиваем логгер
 log = logging.getLogger(__name__)
 
