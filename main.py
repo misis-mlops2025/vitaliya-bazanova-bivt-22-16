@@ -1,7 +1,8 @@
 def main():
     a = int(input("¬ведите первое число: "))
     b = int(input("¬ведите второе число: "))
-    print(a + b)
+    c = int(input("¬ведите третье число: "))
+    print(a + b + c)
 
 
 if __name__ == "__main__":
