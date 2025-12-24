@@ -4,7 +4,7 @@ Tests for the training pipeline.
 from omegaconf import OmegaConf
 from src.models.train_model import get_model, load_data
 from sklearn.linear_model import LogisticRegression
-from src.models.train_model import run_training 
+from src.models.train_model import run_training
 
 def test_load_data():
     """Test data generation shapes."""
