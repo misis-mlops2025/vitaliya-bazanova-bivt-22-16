@@ -90,3 +90,11 @@ target/
 venv/
 venv/
 outputs/
+
+
+# Airflow logs and DB
+airflow/logs/
+airflow/*.db
+airflow/*.pid
+airflow/airflow-webserver.pid
+standalone_admin_password.txt
